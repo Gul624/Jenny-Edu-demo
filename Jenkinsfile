@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    on:  
+      push:
+        branches:
+          - main    
+    tools {
+        nodejs 'node20' // Имя должно строго совпадать с тем, что вы указали в Tools
+    }
 
     stages {
         stage('Checkout') {
